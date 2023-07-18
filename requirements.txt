@@ -1,4 +1,3 @@
-blas==1.0
 bottleneck==1.3.5
 brotli==1.0.9
 bzip2==1.0.8
@@ -104,3 +103,4 @@ xz==5.4.2
 yaml==0.2.5
 zlib==1.2.13
 zstd==1.5.5
+blas==1.0
