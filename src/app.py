@@ -16,11 +16,7 @@ YOLOv8を利用して推論
 # YOLOv8モデルをもとに推論する
 def predict(img):
 
-
-
     '''
-
-    
     ネットワークの準備
     img : 画像データ
     conf : 確率のMIN値
