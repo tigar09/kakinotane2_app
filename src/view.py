@@ -1,3 +1,11 @@
+#log
+import logging
+logging.basicConfig(
+    level=logging.DEBUG, # ログの出力レベルを指定します。DEBUG, INFO, WARNING, ERROR, CRITICALから選択できます。
+    format='%(asctime)s %(levelname)s %(message)s', # ログのフォーマットを指定します。
+    datefmt='%Y-%m-%d %H:%M:%S' # ログの日付時刻フォーマットを指定します。
+)
+
 # 必要なモジュールのインポート
 import collections
 from detection import model # detection.py からネットワークの定義を読み込み
@@ -137,4 +145,4 @@ def predicts():
 
 # アプリケーションの実行の定義
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
