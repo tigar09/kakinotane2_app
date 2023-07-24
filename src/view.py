@@ -114,13 +114,19 @@ def predicts():
             nuts_count_ : ピーナッツの数
             '''
             kakinotane_count = collections.Counter(pred.boxes.cls.numpy())
-            kakinotane_count_ = kakinotane_count[0]
-            nuts_count_ = kakinotane_count[1]
+            #kakinotane_count[0.0] が1個でもあればその数を出力、はない場合は0を出力
+            kakinotane_count_ = kakinotane_count[0.0] if kakinotane_count[0.0] > 0 else 0
+            nuts_count_ = kakinotane_count[1.0] if kakinotane_count[1.0] > 0 else 0
             
-            kakinotane_list = [kakinotane_count[0], kakinotane_count[1]]
+            kakinotane_list = [kakinotane_count_, nuts_count_]
+            
+            #0が含まれているかどうか
+            if 0 not in kakinotane_list:
             # 最大公約数
-            gcd = math.gcd(*kakinotane_list)
-            kakinotane_ratio_, nuts_ratio_= (int(i / gcd) for i in kakinotane_list)
+                gcd = math.gcd(*kakinotane_list)
+                kakinotane_ratio_, nuts_ratio_= (int(i / gcd) for i in kakinotane_list)
+            else:
+                kakinotane_ratio_, nuts_ratio_ = kakinotane_count_, nuts_count_
             
 
             '''
