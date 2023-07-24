@@ -2,4 +2,4 @@
 from ultralytics import YOLO
 
 #自作データーセットを利用して学習したデータ
-model = YOLO('src\detection_yolov5n.pt')
+model = YOLO('./detection_yolov5n.pt')
