@@ -42,4 +42,4 @@ tzdata==2023.3
 urllib3==2.0.3
 Werkzeug==2.3.6
 gunicorn==21.1.0
-yolov5==7.0.12
+ultralytics==8.0.141
